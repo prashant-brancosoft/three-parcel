@@ -65,7 +65,7 @@ class User extends Authenticatable implements CanSendOTPContract
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'email','gender', 'password', 'mobile', 'country','zone_id', 'profile_picture', 'email_confirmed', 'mobile_confirmed', 'email_confirmation_token', 'active','fcm_token','login_by','apn_token','timezone','rating','rating_total','no_of_ratings','refferal_code','referred_by','social_nickname','social_id','social_token','social_token_secret','social_refresh_token','social_expires_in','social_avatar','social_avatar_original','social_provider','company_key','lang','current_lat','current_lng','ride_otp','stripe_customer_id','map_type','is_deleted_at','service_location_id'
+        'name', 'username', 'email','gender', 'password', 'mobile', 'country','zone_id', 'profile_picture', 'email_confirmed', 'mobile_confirmed', 'email_confirmation_token', 'active','fcm_token','login_by','apn_token','timezone','rating','rating_total','no_of_ratings','refferal_code','referred_by','social_nickname','social_id','social_token','social_token_secret','social_refresh_token','social_expires_in','social_avatar','social_avatar_original','social_provider','company_key','lang','current_lat','current_lng','ride_otp','stripe_customer_id','map_type','is_deleted_at','service_location_id', 'requirement_type','gst_number'
     ];
 
     /**

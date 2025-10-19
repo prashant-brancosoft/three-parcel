@@ -65,8 +65,8 @@ export default {
      admin_commision: props.zoneType ? props.zoneType.admin_commision ?? 0 : "",
       admin_commission_type_from_driver: props.zoneType ? props.zoneType.admin_commission_type_from_driver || "" : "",
       admin_commission_from_driver: props.zoneType ? props.zoneType.admin_commission_from_driver ||  0 : "",
-      admin_commission_type_for_owner: props.zoneType ? props.zoneType.admin_commission_type_for_owner || "" : "",
-      admin_commission_for_owner: props.zoneType ? props.zoneType.admin_commission_for_owner ||  0 : "",
+      admin_commission_type_for_owner: props.zoneType ? props.zoneType.admin_commission_type_for_owner || "" : 2,
+      admin_commission_for_owner: props.zoneType ? props.zoneType.admin_commission_for_owner ||  0 : 0,
       service_tax: props.zoneType ? props.zoneType.service_tax ||  0 : "",
       order_number: props.zoneType ? props.zoneType.order_number ||  0 : "",
       base_price: props.zoneTypePrice ? props.zoneTypePrice.base_price ||  0 : "",
@@ -106,8 +106,8 @@ export default {
       admin_commision: { required: true },
       admin_commission_type_from_driver: { required: true },
       admin_commission_from_driver: { required: true },
-      admin_commission_type_for_owner: { required: true },
-      admin_commission_for_owner: { required: true },
+      // admin_commission_type_for_owner: { required: true },
+      // admin_commission_for_owner: { required: true },
       service_tax: { required: true },
       order_number: { required: true },
       base_price: { required: true },
@@ -301,38 +301,38 @@ const fetchVehicleTypes = async () => {
                       <span v-for="(error, index) in errors.zone_id" :key="index" class="text-danger">{{ error }}</span>
                     </div>
                   </div>
-<div class="col-sm-6">
-  <div class="mb-3">
-    <label for="select_transport_type" class="form-label">{{$t("transport_type")}}
-      <span class="text-danger">*</span>
-    </label>
-    <select id="transport_type" class="form-select" v-model="form.transport_type">
-      <option disabled value="">{{$t('select_transport_type')}}</option>
-        <option  value="taxi">{{$t('taxi')}}</option>
-        <option value="delivery">{{$t('delivery')}}</option>
-        <option value="both">{{$t('all')}}</option>
-    </select>
-    <span v-for="(error, index) in errors.transport_type" :key="index" class="text-danger">{{ error }}</span>
-  </div>
-</div>
+                  <div class="col-sm-6">
+                    <div class="mb-3">
+                      <label for="select_transport_type" class="form-label">{{$t("transport_type")}}
+                        <span class="text-danger">*</span>
+                      </label>
+                      <select id="transport_type" class="form-select" v-model="form.transport_type">
+                        <option disabled value="">{{$t('select_transport_type')}}</option>
+                          <!-- <option  value="taxi">{{$t('taxi')}}</option> -->
+                          <option value="delivery" selected>{{$t('delivery')}}</option>
+                          <!-- <option value="both">{{$t('all')}}</option> -->
+                      </select>
+                      <span v-for="(error, index) in errors.transport_type" :key="index" class="text-danger">{{ error }}</span>
+                    </div>
+                  </div>
 
-<div class="col-sm-6">
-  <div class="mb-3">
-    <label for="select_vehicle_type" class="form-label">{{$t("vehicle_type")}}
-      <span class="text-danger">*</span>
-    </label>
-    <Multiselect
-      id="select_vehicle_type"
-      v-model="form.vehicle_type"
-      :options="vehicleTypes.map(type => ({ value: type.id, label: type.name }))"
-      :multiple="false"
-      :searchable="true"
-      :create-option="false"
-      :placeholder="$t('select_vehicle_type')"
-    />
-    <span v-for="(error, index) in errors.vehicle_type" :key="index" class="text-danger">{{ error }}</span>
-  </div>
-</div>
+                  <div class="col-sm-6">
+                    <div class="mb-3">
+                      <label for="select_vehicle_type" class="form-label">{{$t("vehicle_type")}}
+                        <span class="text-danger">*</span>
+                      </label>
+                      <Multiselect
+                        id="select_vehicle_type"
+                        v-model="form.vehicle_type"
+                        :options="vehicleTypes.map(type => ({ value: type.id, label: type.name }))"
+                        :multiple="false"
+                        :searchable="true"
+                        :create-option="false"
+                        :placeholder="$t('select_vehicle_type')"
+                      />
+                      <span v-for="(error, index) in errors.vehicle_type" :key="index" class="text-danger">{{ error }}</span>
+                    </div>
+                  </div>
 
                   <div class="col-sm-6">
                     <div class="mb-3">
@@ -400,25 +400,26 @@ const fetchVehicleTypes = async () => {
                       <span v-for="(error, index) in errors.admin_commission_from_driver" :key="index" class="text-danger">{{ error }}</span>
                     </div>
                   </div>
-                  <div class="col-sm-6">
+                  <div class="col-sm-6 d-none">
                     <div class="mb-3">
                       <label for="admin_commission_type_for_owner" class="form-label">{{$t("admin_commission_type_for_owner")}}
                         <span class="text-danger">*</span>
                       </label>
                       <select id="admin_commission_type_for_owner" class="form-select" v-model="form.admin_commission_type_for_owner">
-                        <option disabled value="">{{$t('select_admin_commission_type_for_owner')}}</option>
-                        <option value="1">{{$t('percentage')}}</option>
+                        <!-- <option disabled value="">{{$t('select_admin_commission_type_for_owner')}}</option> -->
+                        <option value="1" selected>{{$t('percentage')}}</option>
                         <option value="2">{{$t('fixed_amount')}}</option>
                       </select>
                       <span v-for="(error, index) in errors.admin_commission_type_for_owner" :key="index" class="text-danger">{{ error }}</span>
                     </div>
                   </div>
-                  <div class="col-sm-6">
+                  <div class="col-sm-6 d-none">
                     <div class="mb-3">
                       <label for="admin_commission_for_owner" class="form-label">{{$t("admin_commission_for_owner")}}
                         <span class="text-danger">*</span>
                       </label>
-                      <input type="number" step="any" class="form-control" :placeholder="$t('enter_admin_commission_for_owner')" id="admin_commission_for_owner" v-model.number="form.admin_commission_for_owner" :max="form.admin_commission_type_for_owner == '1' ?  100: null ">
+                      <!-- <input type="number" step="any" class="form-control" :placeholder="$t('enter_admin_commission_for_owner')" id="admin_commission_for_owner" v-model.number="form.admin_commission_for_owner" :max="form.admin_commission_type_for_owner == '1' ?  100: null " value="0"> -->
+                      <input type="number" step="any" class="form-control" :placeholder="$t('enter_admin_commission_for_owner')" id="admin_commission_for_owner"  value="0">
                       <span v-for="(error, index) in errors.admin_commission_for_owner" :key="index" class="text-danger">{{ error }}</span>
                     </div>
                   </div>
@@ -526,7 +527,7 @@ const fetchVehicleTypes = async () => {
                       <span v-for="(error, index) in errors.minimum_trip_distane" :key="index" class="text-danger">{{ error }}</span>
                     </div>
                   </div> -->
-                  <div class="col-sm-6">
+                  <!-- <div class="col-sm-6">
                     <div class="mt-4">
                       <div class="form-check form-check-inline">
                         <input
@@ -538,8 +539,8 @@ const fetchVehicleTypes = async () => {
                         <label class="form-check-label" for="support_airport_fee">{{$t("enable_airport_surge_fee")}}</label>
                       </div>
                     </div>
-                  </div>
-                  <div class="col-sm-6" v-show="form.support_airport_fee == '1'">
+                  </div> -->
+                  <!-- <div class="col-sm-6" v-show="form.support_airport_fee == '1'">
                     <div class="mb-3">
                       <label for="airport_surge" class="form-label">{{$t("airport_surge_fee")}}
                         <span class="text-danger">*</span>
@@ -560,7 +561,7 @@ const fetchVehicleTypes = async () => {
                         <label class="form-check-label" for="support_outstation">{{$t("enable_outstation")}}</label>
                       </div>
                     </div>
-                  </div>  
+                  </div>   -->
                   <BCardFooter v-show="form.support_outstation == '1'" class="mt-5">
                     <h5>{{$t("outstation")}}</h5>
                     <div class="row">

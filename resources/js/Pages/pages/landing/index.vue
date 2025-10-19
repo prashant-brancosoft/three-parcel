@@ -63,7 +63,40 @@ export default {
 </script>
 
 <template>
-    <div class="layout-wrapper landing">
+    <section class="creative-template">
+		<div class="coming-soon-content">
+			<h6>COMING SOON</h6>
+			<h1>We’r blowing up</h1>
+			<div class="row">
+				<div class="col-md-9">
+					<p>We're under construction. Check back for an update soon. Stay in touch!</p>
+				</div>
+			</div>
+			<form action="#">
+				<input type="email" placeholder="threeparcel@gmail.com">
+				<button>Notify Me</button>
+			</form>
+
+			<ul class="social-icon">
+				<li><a href="https://www.fiverr.com/sellers/creativesalahu/"><i class="fab fa-facebook-f"></i></a></li>
+				<li><a href="https://www.fiverr.com/sellers/creativesalahu/"><i class="fab fa-instagram"></i></a></li>
+				<li><a href="https://www.fiverr.com/sellers/creativesalahu/"><i class="fab fa-pinterest-p"></i></a></li>
+				<li><a href="https://www.fiverr.com/sellers/creativesalahu/"><i class="fab fa-linkedin-in"></i></a></li>
+			</ul>
+		</div>
+		<img src="https://i.ibb.co/Xfkk7380/shape-46-creativesalahu.png" alt="" class="shapes shape-one">
+		<img src="https://i.ibb.co/W4kRJs0T/shape-47-creativesalahu.png" alt="" class="shapes shape-two">
+		<img src="https://i.ibb.co/yFPBGfWd/shape-48-creativesalahu.png" alt="" class="shapes shape-three">
+		<img src="https://i.ibb.co/rft2vzg0/shape-49-creativesalahu.png" alt="" class="shapes shape-four">
+		<img src="https://i.ibb.co/35q6g9yS/shape-50-creativesalahu.png" alt="" class="shapes shape-five">
+		<img src="https://i.ibb.co/35q6g9yS/shape-50-creativesalahu.png" alt="" class="shapes shape-six">
+	</section>
+<!-- Buy Me A Coffee -->
+<a href="#" class="coffee-button" target="_blank">
+    <span class="coffee-icon">☕</span> Parcel Delivery
+  </a>
+
+    <div class="layout-wrapper landing d-none">
         <Head :title="$t('home')" />
         <LandingHeader :headers="landingHeader">
             
@@ -386,4 +419,306 @@ export default {
 .icon-effect::before {
     background-color:  rgb(from var(--landing_header_act_text) r g b / 33%);
 }
+
+/* new */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+body{
+	font-weight: normal;
+	font-size: 18px;
+	position: relative;
+	line-height: 1.66em;
+	color: #292929;
+	background-color: #fff;
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+}
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+*, ::after, ::before {
+	box-sizing: border-box;
+}
+img {
+    max-width: 100%;
+    display: block;
+}
+img, svg {
+    vertical-align: middle;
+}
+/* ================= Coming Soon Template ================== */
+.creative-template {
+    min-height: 100vh;
+    padding: 40px 12px;
+    position: relative;
+    z-index: 5;
+    background: url(https://imgpanda.com/upload/ib/0pOfzusR8z.png) no-repeat center;
+    background-size: cover;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.coming-soon-content {
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+}
+.coming-soon-content h6{
+	    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #000;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: .5rem;
+    line-height: 1.2;
+}
+.coming-soon-content h1{
+	    font-size: 100px;
+    line-height: 1.18em;
+    padding: 8px 0 30px;
+    color: #000;
+    font-weight: normal;
+    font-family: "Libre Baskerville", serif;
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+.coming-soon-content .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.coming-soon-content .row .col-md-9 {
+    flex: 0 0 auto;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.coming-soon-content .row .col-md-9 p{
+	    font-size: 24px;
+    line-height: 1.66em;
+    padding-bottom: 55px;
+    font-family: "Roboto", sans-serif;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+.coming-soon-content form{
+	    max-width: 620px;
+    height: 75px;
+    position: relative;
+    margin: 0 auto;
+}
+.coming-soon-content form input{
+	    display: block;
+    width: 100%;
+    border: none;
+    background: #F4F4F4;
+    border-radius: 10px;
+    padding: 0 190px 0 20px;
+    height: 100%;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, .05);
+    outline: none;
+    transition: all .3s ease-in-out;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    line-height: normal;
+    font-family: "Roboto", sans-serif;
+}
+.coming-soon-content form button{
+    width: 185px;
+    background: #151515;
+    color: #fff;
+    border-radius: 10px;
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    bottom: 6px;
+    transition: all .3s ease-in-out;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+.coming-soon-content form button:hover{
+	    background: #ff2759;
+}
+.coming-soon-content .social-icon {
+    position: relative;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.coming-soon-content .social-icon li a{
+width: 34px;
+    height: 34px;
+    line-height: 32px;
+    font-size: 17px;
+    text-align: center;
+    background: #fff;
+    border-radius: 7px;
+    color: #333333;
+    margin: 0 5px;
+    transition: all .3s ease-in-out;
+    text-decoration: none;
+    display: inline-block;
+}
+.shapes{
+	    position: absolute;
+    z-index: -1;
+}
+.creative-template .shape-one {
+    top: 8%;
+    left: 45%;
+    animation: jumpTwo 5s infinite linear;
+}
+.creative-template .shape-two{
+top: 6%;
+    right: 45%;
+    animation: jumpThree 5s infinite linear;
+}
+.creative-template .shape-three{
+    top: 20%;
+    right: 8%;	
+}
+.creative-template .shape-four{
+    bottom: 20%;
+    left: 8%;	
+}
+.creative-template .shape-five{
+	    top: 20%;
+    left: 10%;
+    animation: moveclouds 10s alternate infinite;
+}
+.creative-template .shape-six{
+	    bottom: 20%;
+    right: 10%;
+    animation: moveclouds2 10s alternate infinite;
+}
+@keyframes jumpTwo{
+	0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+40% {
+    -webkit-transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 20px, 0);
+}
+100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+}
+@keyframes jumpThree{
+	0% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+40% {
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+}
+100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+}
+@keyframes moveclouds{
+	0% {
+    margin-left: 200px;
+}
+
+100% {
+    margin-left: -200px;
+}
+}
+@keyframes moveclouds2{
+	0% {
+    margin-right: 200px;
+}
+100% {
+    margin-right: -200px;
+}
+}
+
+/* ==================== Responsive Ipad ===================== */
+@media (max-width: 991px) {
+	    .coming-soon-content h6 {
+        font-size: 14px;
+    }
+    .coming-soon-content h1 {
+        font-size: 60px;
+        padding-bottom: 20px;
+    }
+    .coming-soon-content form {
+        height: 65px;
+    }
+}
+/* ==================== Responsive Iphone ===================== */
+@media (max-width: 460px) {
+.creative-template .shape-four{
+	display: none;
+}
+.creative-template .shape-three{
+	display: none;
+}
+.coming-soon-content .row .col-md-9{
+	width: 100%;
+}
+.coming-soon-content .row .col-md-9 p{
+	    font-size: 20px;
+    padding-bottom: 25px;
+}
+.coming-soon-content form input{
+	    padding: 0 20px 0 20px;
+}
+.coming-soon-content form button{
+	    width: 100%;
+    position: relative;
+    height: 65px;
+    right: 0;
+    top: 0;
+    margin-top: 10px;
+}
+}
+
+/* ====================== Buy Me A Coffee =============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+    .coffee-button {
+      position: fixed;
+      z-index:9;
+      top: 20px;
+      right: 20px;
+      background-color: #FFC107;
+      color: #333;
+      padding: 8px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-family: "Dancing Script", cursive;
+      font-weight: 600;
+      font-size: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .coffee-button:hover {
+      background-color: #FFD54F;
+    }
+
+    .coffee-icon {
+      font-size: 24px;
+      line-height: 1;
+    }
 </style>

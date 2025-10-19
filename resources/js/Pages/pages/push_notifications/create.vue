@@ -174,7 +174,7 @@ export default {
                         <option disabled value="">{{$t("select")}}</option>
                         <option  value="driver">{{$t("driver")}}</option>
                         <option  value="user">{{$t("user")}}</option>
-                        <option  value="owner">{{$t("owner")}}</option>
+                        <!-- <option  value="owner">{{$t("owner")}}</option> -->
                       </select>
                       <span v-for="(error, index) in errors.send_to" :key="index" class="text-danger">{{ error }}</span>
                     </div>

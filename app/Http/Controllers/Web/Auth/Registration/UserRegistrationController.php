@@ -61,7 +61,10 @@ class UserRegistrationController extends LoginController
             'mobile_confirmed' => true,
             'country'=>$request->input('country'),
             'refferal_code'=>str_random(6),
-            'lang'=>'en'
+            'lang'=>'en',
+            'requirement_type'=> $request->input('user_type','personal'),
+            'gst_number'=>$request->input('gst_number')
+
         ];
 
 

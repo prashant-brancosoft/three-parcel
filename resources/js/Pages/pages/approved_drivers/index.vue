@@ -390,10 +390,11 @@ export default {
                                 <tbody v-if="results.length > 0">
                                     <tr v-for="(result, index) in results" :key="index">
                                         <td>
-                                        <a @click.prevent="viewProfile(result)">{{ result.name }}</a>
+                                        <a class="text-info cursor-pointer" @click.prevent="viewProfile(result)">{{ result.name }}</a>
                                     </td> 
                                         <td> {{ result.service_location_name }}</td>
-                                        <td>{{ mobileFromUser(result) }}</td>
+                                        <td> <a class="text-info cursor-pointer" @click.prevent="viewProfile(result)">{{ mobileFromUser(result) }} </a> </td>
+
 
                                         <td class="text-wrap">
                                             <span v-if="result.transport_type === 'taxi'">{{ $t('taxi') }} - {{ result.vehicle_type_name }}</span>

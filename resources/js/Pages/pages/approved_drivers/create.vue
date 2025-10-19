@@ -358,11 +358,11 @@ export default {
             <label for="transport_type" class="form-label">{{$t("transport_type")}}
               <span class="text-danger">*</span>
             </label>
-            <select id="transport_type" class="form-select" v-model="form.transport_type">
+            <select id="transport_type" class="form-select" v-model="form.transport_type" style="display: none;">
               <option disabled value="">{{$t("select")}}</option>
-              <option value="taxi">{{$t("taxi")}}</option>
-              <option value="delivery">{{$t("delivery")}}</option>
-              <option value="both">{{$t("both")}}</option>
+              <!-- <option value="taxi">{{$t("taxi")}}</option> -->
+              <option value="delivery" selected>{{$t("delivery")}}</option>
+              <!-- <option value="both">{{$t("both")}}</option> -->
             </select>
             <span v-if="errors.transport_type" class="text-danger">{{ errors.transport_type }}</span>
           </div>

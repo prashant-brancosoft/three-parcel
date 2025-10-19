@@ -383,7 +383,7 @@ export default {
                                                     :title="$t('edit')">
                                                     <i class='bx bxs-edit-alt bx-xs'></i>
                                                 </BButton>
-                                                <BButton @click.prevent="packagesData(result)"
+                                                <!-- <BButton @click.prevent="packagesData(result)"
                                                     class="btn btn-soft-success btn-sm m-2"  v-if="permissions.includes('add-package-price')"
                                                     data-bs-toggle="tooltip" v-b-tooltip.hover :title="$t('set_package_prices')">
                                                     <i class='bx bx-gift bx-xs'></i>
@@ -402,7 +402,7 @@ export default {
                                                     class="btn btn-soft-danger btn-sm m-2"  v-if="permissions.includes('zone-surge')"
                                                     data-bs-toggle="tooltip" v-b-tooltip.hover :title="$t('surge')">
                                                     <i class='ri-flashlight-line bx-xs'></i>
-                                                </BButton>
+                                                </BButton> -->
                                             </div>
                                         </td>
                                     </tr>

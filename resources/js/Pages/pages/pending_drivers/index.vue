@@ -344,7 +344,7 @@ export default {
                                         <th scope="col">{{$t("name")}}</th>
                                         <th scope="col">{{$t("service_location")}}</th>
                                         <th scope="col">{{$t("mobile_number")}}</th>
-                                        <th scope="col">{{$t("transport_type")}}</th>
+                                        <!-- <th scope="col">{{$t("transport_type")}}</th> -->
                                         <th scope="col">{{$t("document_view")}}</th>
                                         <th scope="col">{{$t("approved_status")}}</th>
                                         <th scope="col">{{$t("declined_reason")}}</th>
@@ -356,15 +356,16 @@ export default {
                                 <tbody v-if="results.length > 0">
                                     <tr v-for="(result, index) in results" :key="index">
                                         <td>
-                                        <a @click.prevent="viewProfile(result)">{{ result.name }}</a>
+                                        <a class="text-info cursor-pointer" @click.prevent="viewProfile(result)">{{ result.name }}</a>
                                     </td> 
                                         <td> {{ result.service_location_name }}</td>
-                                        <td>{{ mobileFromUser(result) }}</td>
-                                        <td class="text-wrap">
+                                        <td>
+                                            <a class="text-info cursor-pointer" @click.prevent="viewProfile(result)">{{ mobileFromUser(result) }} </a> </td>
+                                        <!-- <td class="text-wrap">
                                             <span v-if="result.transport_type === 'taxi'">{{ $t('taxi') }} - {{ result.vehicle_type_name }}</span>
                                             <span v-else-if="result.transport_type === 'delivery'">{{ $t('delivery') }} - {{ result.vehicle_type_name }}</span>
                                             <span v-else>{{ $t('all') }} - {{ result.vehicle_type_name }}</span>
-                                        </td>
+                                        </td> -->
                                         <td v-if="permissions.includes('driver-upload-documents')">
                                             <!-- <Link href="#" @click.prevent="documentView(result)">
                                                 <i class="bx bxs-file text-primary" style="font-size: 35px"></i>

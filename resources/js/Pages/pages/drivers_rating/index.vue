@@ -261,7 +261,7 @@ export default {
                                 <thead class="table-active">
                                     <tr>
                                         <th scope="col">{{$t("name")}}</th>
-                                        <th scope="col">{{$t("transport_type")}}</th>
+                                        <!-- <th scope="col">{{$t("transport_type")}}</th> -->
                                         <th scope="col">{{$t("mobile_number")}}</th>
                                         <th scope="col">{{$t("rating")}}</th>
                                         <th scope="col">{{$t("action")}}</th>
@@ -270,7 +270,7 @@ export default {
                                 <tbody v-if="results.length > 0">
                                     <tr v-for="(result, index) in results" :key="index">
                                         <td> {{ result.name }}</td>
-                                        <td> {{ result.transport_type }}</td>
+                                        <!-- <td> {{ result.transport_type }}</td> -->
                                         <td>{{ mobileFromUser(result) }}</td>
                                         <td> 
                                             <div>

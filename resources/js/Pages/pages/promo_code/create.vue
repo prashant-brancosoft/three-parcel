@@ -56,7 +56,7 @@ export default {
 
     const form = useForm({
       service_location_id: props.promo ? props.promo.service_location_id : '',
-      transport_type: props.promo ? props.promo.transport_type : '',
+      transport_type: props.promo ? props.promo.transport_type : 'delivery',
       code: props.promo ? props.promo.code : '',
       minimum_trip_amount: props.promo ? props.promo.minimum_trip_amount : '',
       maximum_discount_amount: props.promo ? props.promo.maximum_discount_amount : '',
@@ -244,7 +244,7 @@ export default {
                       class="form-check-input" :checked="form.user_id? form.user_id.length > 0 : false">
                     </div>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-md-6 d-none">
                     <div class="mb-3">
                       <label for="select_transport_type" class="form-label">{{ $t("transport_type") }}
                         <span class="text-danger">*</span>
@@ -252,7 +252,7 @@ export default {
                       <select id="transport_type" class="form-select" v-model="form.transport_type">
                         <option disabled value="">{{ $t("select") }}</option>
                         <option value="taxi">{{ $t("taxi") }}</option>
-                        <option value="delivery">{{ $t("delivery") }}</option>
+                        <option value="delivery" selected>{{ $t("delivery") }}</option>
                         <option value="both">{{ $t("all") }}</option>
                       </select>
                       <span v-for="(error, index) in errors.transport_type" :key="index" class="text-danger">{{ error }}</span>
